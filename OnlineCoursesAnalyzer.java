@@ -9,9 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.*;
-
-
 
 public class OnlineCoursesAnalyzer {
 
@@ -63,8 +60,7 @@ public class OnlineCoursesAnalyzer {
     HashMap<String, Integer> hashMap = (HashMap<String, Integer>) this.courses.stream()
         .collect(
             Collectors.groupingBy(
-                course -> course.getInstitution() + "-" +
-                    course.getSubject(),
+                course -> course.getInstitution() + "-" + course.getSubject(),
                 Collectors.summingInt(Course::getParticipants))
         );
 
